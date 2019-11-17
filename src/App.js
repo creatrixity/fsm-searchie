@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Search } from "./NorrisSearch";
+import { ThemeProvider, Flex } from "@chakra-ui/core";
 
-function App() {
+const SearchContainer = ({ children }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex height="100%" width="100%">
+      <Flex width="100%">{children}</Flex>
+    </Flex>
+  );
+};
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <SearchContainer>
+        <Search />
+      </SearchContainer>
+    </ThemeProvider>
   );
 }
-
-export default App;

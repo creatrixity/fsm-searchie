@@ -120,7 +120,7 @@ export const searchMachine = Machine({
               target: "resultsAvailable",
               actions: assign({
                 results: (ctx, { data }) => {
-                  return data ? data.data.result : [];
+                  return data.length ? data : [];
                 }
               })
             },

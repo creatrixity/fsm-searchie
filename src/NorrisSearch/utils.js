@@ -13,7 +13,7 @@ export const requestSearchResults = debounce(({ query }) => {
     .then(response => response.json())
     .then(json => {
       console.log({ json });
-      return json;
+      return json.result;
     });
 }, 500);
 
